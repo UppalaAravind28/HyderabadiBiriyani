@@ -9,7 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #dfd0d0;
 }
 
 /* Navbar */
@@ -44,10 +44,13 @@ body {
     color: white;
     font-weight: bold;
     transition: color 0.3s ease;
+    
 }
 
 .nav-links a:hover {
     color: #ffe066;
+    background-color: #05052b;
+    padding: 10px;
 }
 
 /* Hero Section */
@@ -68,11 +71,18 @@ body {
 .hero-content h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    background-color: #ddbdbd;
+    color: #05052b;
+    border-radius: 10px;
+
 }
 
 .hero-content p {
     font-size: 18px;
     margin-bottom: 30px;
+    background-color: #cec8c8;
+    color: #25252a;
+    border-radius: 10px;
 }
 
 .hero-content .btn {
@@ -98,8 +108,11 @@ body {
 
 .section-title {
     font-size: 28px;
-    color: #d9534f;
+    color: #d21c16;
     margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgb(197, 196, 207);
+    border-radius: 20px;
 }
 
 .menu-grid {
@@ -107,6 +120,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
+    background-color: #c2b6b6;
+    border-radius: 10px;
 }
 
 .menu-item img {
