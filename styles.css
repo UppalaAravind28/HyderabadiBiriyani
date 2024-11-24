@@ -126,6 +126,29 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
+/* Back to Main Button */
+.back-to-main {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-to-main .btn {
+    text-decoration: none;
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    display: inline-block;
+}
+
+.back-to-main .btn:hover {
+    background-color: #18335b;
+    color: #d9534f;
+}
+
 
 /* Footer */
 footer {
@@ -133,11 +156,13 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+    margin-top: auto; /* Pushes the footer to the bottom if there's extra space */
+    margin-bottom: 0px;
 }
 
 footer h3 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 footer .social-links a {
