@@ -9,7 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #dfd0d0;
+    background-color: #f0e8e8;
 }
 
 /* Navbar */
@@ -93,6 +93,7 @@ body {
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
+    
 }
 
 .hero-content .btn:hover {
@@ -111,7 +112,7 @@ body {
     color: #d21c16;
     margin-bottom: 30px;
     padding: 20px;
-    background-color: rgb(197, 196, 207);
+    background-color: rgb(207, 206, 219);
     border-radius: 20px;
 }
 
@@ -120,7 +121,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: #c2b6b6;
+    background-color: #ded3d3;
     border-radius: 10px;
 }
 
