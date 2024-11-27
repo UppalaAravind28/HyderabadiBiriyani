@@ -1,4 +1,4 @@
-**Hyderabadi Biriyani Website Documentation**
+# Hyderabadi Biriyani Website
 
 **Project Overview**
 
