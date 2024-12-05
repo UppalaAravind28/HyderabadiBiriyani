@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f0e8e8;
+    overflow-x: hidden; /* Prevents horizontal scrolling from animation overflow */
 }
 
 /* Navbar */
@@ -23,11 +24,16 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease; /* Smooth transition for color changes */
+}
+.navbar:hover {
+    background-color: #c8423e; /* Darker background on hover */
 }
 
 .navbar .logo {
     height: 50px;
     border-radius: 5px;
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect for logo */
 }
 
 .nav-links {
@@ -37,20 +43,26 @@ body {
 
 .nav-links li {
     margin: 0 15px;
+    animation: slideIn 2.5s ease-in-out; /* Slide-in effect for navigation links */
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s ease;
-    
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #ffe066;
     background-color: #05052b;
     padding: 10px;
+    border-radius: 5px;
+}
+header{
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
 }
 
 /* Hero Section */
@@ -66,6 +78,7 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect for hero section */
 }
 
 .hero-content h2 {
@@ -74,7 +87,8 @@ body {
     background-color: #ddbdbd;
     color: #05052b;
     border-radius: 10px;
-
+    padding: 10px;
+    animation: slideDown 2.5s ease-out; /* Slide-down effect for heading */
 }
 
 .hero-content p {
@@ -83,6 +97,8 @@ body {
     background-color: #cec8c8;
     color: #25252a;
     border-radius: 10px;
+    padding: 10px;
+    animation: slideUp 2.5s ease-out; /* Slide-up effect for paragraph */
 }
 
 .hero-content .btn {
@@ -92,13 +108,13 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .hero-content .btn:hover {
     background-color: #d9534f;
     color: white;
+    transform: scale(1.1); /* Subtle zoom effect on hover */
 }
 
 /* Menu Section */
@@ -114,6 +130,7 @@ body {
     padding: 20px;
     background-color: rgb(207, 206, 219);
     border-radius: 20px;
+    animation: fadeIn 2.5s ease-in-out; /* Fade-in effect for title */
 }
 
 .menu-grid {
@@ -130,6 +147,7 @@ body {
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 2.5s ease-in-out; /* Zoom-in effect for images */
 }
 
 .menu-item img:hover {
@@ -141,11 +159,22 @@ body {
     margin-top: 10px;
     font-size: 18px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
+
+.menu-item p:hover {
+    color: #d9534f;
+}
+.menu-item:hover{
+    background-color: #8eb0ce;
+    border-radius: 20px;
+}
+
 /* Back to Main Button */
 .back-to-main {
     text-align: center;
     margin: 20px 0;
+    animation: fadeIn 2.5s ease-in-out; /* Fade-in effect for the button */
 }
 
 .back-to-main .btn {
@@ -155,16 +184,16 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     border: none;
     display: inline-block;
 }
 
 .back-to-main .btn:hover {
     background-color: #18335b;
-    color: #d9534f;
+    color: #ffe066;
+    transform: scale(1.1); /* Subtle zoom effect on hover */
 }
-
 
 /* Footer */
 footer {
@@ -174,9 +203,10 @@ footer {
     text-align: center;
     margin-top: auto; /* Pushes the footer to the bottom if there's extra space */
     margin-bottom: 0px;
+    animation: fadeIn 2.5s ease-in-out; /* Fade-in effect for footer */
 }
 
-footer h3 {
+footer h1{
     font-size: 24px;
     margin-bottom: 0px;
 }
@@ -193,6 +223,60 @@ footer .social-links a:hover {
     color: #ffe066;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h2 {
@@ -207,3 +291,56 @@ footer .social-links a:hover {
         font-size: 16px;
     }
 }
+
+/* About Section */
+#about {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 1.5s ease-in;
+}
+
+.about-container h1 {
+    font-size: 32px;
+    color: #d9534f;
+    margin-bottom: 20px;
+}
+
+.about-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.about-container p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.about-container ul {
+    text-align: left;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.about-container ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
