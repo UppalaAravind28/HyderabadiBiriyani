@@ -5,12 +5,23 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Ensures the body takes the full viewport height */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Makes body a flex container */
+    min-height: 100vh; /* Ensures the body stretches to fill the viewport */
     overflow-x: hidden; /* Prevents horizontal scrolling due to animations */
+}
+
+main {
+    flex: 1; /* Allows the main content to grow and take available space */
 }
 
 /* Navbar */
@@ -23,8 +34,9 @@ body {
     color: white;
     position: sticky;
     top: 0;
+    gap: 10px;
     z-index: 1000;
-    transition: background-color 0.3s ease; /* Smooth background-color transition */
+    transition: background-color 0.3s ease; 
 }
 
 .navbar:hover {
@@ -34,12 +46,15 @@ body {
 .navbar .logo {
     height: 50px;
     border-radius: 5px;
-    animation: fadeIn 1.5s ease-in-out; /* Fade-in effect for logo */
+    animation: fadeIn 1.5s ease-in-out; 
 }
 
 .nav-links {
     list-style: none;
     display: flex;
+    flex-direction: row;
+    
+    flex-wrap: wrap; 
 }
 
 .nav-links li {
@@ -231,12 +246,14 @@ body {
     color: #d9534f;
     transform: scale(1.1);
 }
+
 /* Footer */
 footer {
     background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
+    margin-top: auto; /* Pushes the footer to the bottom */
 }
 
 footer h3 {
@@ -255,9 +272,6 @@ footer .social-links a {
 footer .social-links a:hover {
     color: #ffe066;
 }
-
-
-
 
 /* Animations */
 @keyframes fadeIn {
@@ -303,9 +317,28 @@ footer .social-links a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .menu-item img {
+        max-width: 200px;
+    }
+
+    .item-info h2 {
+        font-size: 22px;
+    }
+
+    .item-info p {
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 768px) {
-    .menu-item p {
-        font-size: 16px;
+    /* .navbar {
+        flex-direction: column;
+    } */
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .item-info h2 {
@@ -321,4 +354,21 @@ footer .social-links a:hover {
     }
 }
 
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .item-info h2 {
+        font-size: 18px;
+    }
+
+    .item-info p {
+        font-size: 13px;
+    }
+
+    .item-info .btn {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}
